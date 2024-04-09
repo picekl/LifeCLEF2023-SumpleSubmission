@@ -1,0 +1,23 @@
+# data
+augmentations: 'vit_heavy'
+image_size: [256, 256]  # [height, width]
+dataset: 'SnakeCLEF2023'
+
+# model
+architecture: 'swinv2_tiny_window16_256.ms_in1k'
+
+# training
+loss: 'SeeSawLoss'
+optimizer: 'SGD'
+scheduler: 'plateau'
+epochs: 100
+learning_rate: 0.01
+batch_size: 32
+accumulation_steps: 4
+
+# other
+random_seed: 777
+workers: 8
+multigpu: False
+tags: ["Fine-tuning"]  # W&B Run tags
+root_path: "./"
